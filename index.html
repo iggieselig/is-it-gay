@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>is it gay?</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="isitgay_style.css" rel="stylesheet">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav class="site-nav">
+    <a href="index.html" aria-current="page">home</a>
+    <a href="about.html">about</a>
+    <a href="submit.html">submit</a>
+  </nav>
+
+  <main class="container">
+    <h1>Is It Gay?</h1>
+
+    <div class="search-row">
+      <div class="search-area">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="type a movie, game, book, anime..."
+            autocomplete="off"
+            aria-label="search for a title"
+          >
+          <button id="clearBtn" class="icon-btn material-icons" type="button" aria-label="clear">search</button>
+        </div>
+        <div id="suggestions" role="listbox"></div>
+      </div>
+
+      <button id="rollBtn" class="roll-btn material-icons" type="button" aria-label="check">arrow_forward</button>
+    </div>
+
+    <button id="luckyBtn" class="lucky" type="button">feeling lucky?</button>
+
+    <div id="results" aria-live="polite"></div>
+  </main>
+</body>
+</html>

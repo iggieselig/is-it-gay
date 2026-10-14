@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>submit · is it gay?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link href="isitgay_style.css" rel="stylesheet">
+  <script src="data.js" defer></script>
+  <script src="submit.js" defer></script>
+</head>
+
+<body>
+  <nav class="site-nav">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="submit.html" aria-current="page">submit</a>
+  </nav>
+
+  <main class="container page">
+    <h1>submit</h1>
+    <p>know something that should be on the list? tell me about it.</p>
+
+    <form id="submitForm" class="submit-form" novalidate>
+      <label class="field">
+        <span>title *</span>
+        <input type="text" name="title" id="titleInput" autocomplete="off" required>
+      </label>
+      <p id="duplicateNote" class="form-note" hidden></p>
+
+      <div class="field-row">
+        <label class="field">
+          <span>type *</span>
+          <select name="media" required>
+            <option value="" selected disabled>choose…</option>
+            <option value="movie">movie</option>
+            <option value="series">series</option>
+            <option value="anime">anime</option>
+            <option value="game">game</option>
+            <option value="book">book</option>
+            <option value="manga">manga</option>
+            <option value="comic">comic</option>
+            <option value="other">other</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>year</span>
+          <input type="number" name="year" inputmode="numeric" min="1800" max="2100" placeholder="e.g. 2016">
+        </label>
+      </div>
+
+      <fieldset class="field">
+        <legend>is it gay? *</legend>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="gay" value="YES" required><span>yes</span></label>
+          <label class="choice"><input type="radio" name="gay" value="NO"><span>no</span></label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span>why?</span>
+        <textarea name="why" rows="4" placeholder="which characters, what happens, where it's confirmed…"></textarea>
+      </label>
+
+      <label class="field">
+        <span>your name (optional)</span>
+        <input type="text" name="name" autocomplete="nickname">
+      </label>
+
+      <!-- campo invisível anti-spam: pessoas não veem, robôs preenchem -->
+      <label class="honeypot" aria-hidden="true">
+        website <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </label>
+
+      <button type="submit" class="submit-btn">send</button>
+      <p id="formStatus" class="form-note" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
